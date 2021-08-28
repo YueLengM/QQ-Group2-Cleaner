@@ -98,8 +98,10 @@ def del_ipt():
 
 Tk().withdraw()
 ROOT_PATH = filedialog.askdirectory(title="请选择要清理的 Group2 文件夹")
-scan()
-print()
-while True:
-    output()
-    del_ipt()
+if ROOT_PATH:
+    os.system('mode con: cols={} lines=20'.format(len(ROOT_PATH) + 50))
+    scan()
+    print()
+    while True:
+        output()
+        del_ipt()
